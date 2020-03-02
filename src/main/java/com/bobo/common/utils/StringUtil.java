@@ -11,6 +11,63 @@ import java.util.Random;
  * @date: 2020年2月27日 上午9:42:38
  */
 public class StringUtil {
+	
+	
+	/**
+	 * 
+	 * @Title: getValue 
+	 * @Description:传入两个参数,要求返回该字符串从start长度开始,以后的字符以*代替.
+	      如:传入 八维教育学院 经过处理后,返回 八维****
+	 * @param str
+	 * @param start
+	 * @return
+	 * @return: String
+	 */
+	public static String getValue(String str,int start){
+	    //八维教育学院   经过处理后,返回 八维****
+		
+		 String s1 =str.substring(2);
+		 String s2="";
+		 for (int i = 0; i < s1.length(); i++) {
+			// str = str.replace(String.valueOf(str.charAt(i)),"*");
+			 s2+="*";
+		}
+	    return str.substring(0,2)+ s2;
+	}
+	
+	
+	
+	
+	//判断一个字符串是否是数字 考虑整数 负数 小数
+	
+	public static  boolean isNumber(String src) {
+		
+		String reg ="^(-)?[0-9]+(\\.[0-9]+)?$";
+		return src.matches(reg);
+	}
+	
+	
+	
+	
+	//判断是否是中国的手机号
+	public static boolean isPhone(String src) {
+		//定义规则
+		String reg ="^1[3|4|5|7|8]\\d{9}$";
+		return src.matches(reg);
+		
+	}
+	
+	//判断是否邮箱
+	public static boolean isEMail(String src) {
+		//定义规则 num2222@126.com
+		String reg = "\\w+\\@\\w+\\.\\w+";
+		return src.matches(reg);
+	}
+	
+	
+	
+	
+	
 	//方法1：判断源字符串是否有值，空引号(空白字符串)也算没值 (5分)
 	public static boolean hasLength(String src){//""  null   " "
 		return null!=src && src.length() >0;
