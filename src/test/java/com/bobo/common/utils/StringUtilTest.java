@@ -8,6 +8,17 @@ public class StringUtilTest {
 	
 	
 	@Test
+	public void testUrl() {
+		
+		boolean b = StringUtil.isHttpUrl("https://www.baidu.com/");
+		boolean b2 = StringUtil.isHttpUrl("123");
+		System.out.println(b);
+		System.out.println(b2);
+		
+	}
+	
+	
+	@Test
 	public void testGetValue() {
 		 String value = StringUtil.getValue("八维教育学院", 2);
 		 int x=1/0;

@@ -1,6 +1,7 @@
 package com.bobo.common.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.util.Random;
 
 /**
@@ -11,6 +12,27 @@ import java.util.Random;
  * @date: 2020年2月27日 上午9:42:38
  */
 public class StringUtil {
+	
+	
+	
+	/**
+	 * 校验传入的参数是否为url
+	 * @param param
+	 * @return
+	 */
+	public static boolean isHttpUrl(String param) {
+		 URL url;  
+		 try {  
+	         url = new URL(param);
+	        url.openStream();  
+	         return true; //url合法
+	    } catch (Exception e1) {  
+	         System.out.println("连接打不开!");  
+	       
+	    }  
+		 return false;
+		
+	}
 	
 	
 	/**
